@@ -1,8 +1,21 @@
-TypeScript + nodejs で開発する用のテンプレート
+nodejs から Trello API を呼ぶやつ
 
-- TypeScript
-- node
-- ts-node
-- ts-node-dev
-- rimraf
-- npm-run-all
+### 下準備
+
+- Trello にログインした状態で [ここ](https://trello.com/1/appKey/generate) にアクセスし、
+Key と Token を取得する
+
+- `./config` フォルダと `trelloConfig.json` を作成し、以下の通り記述する
+
+``` json
+{
+    "key":"[取得したKey]",
+    "token":"[取得したToken]",
+    "board":{
+        "id":"[接続したいboardのid]",
+        "list":{
+            "[name]" : "[接続したいリストのid]"
+        }
+    }
+}
+```
